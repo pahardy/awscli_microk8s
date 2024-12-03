@@ -14,5 +14,6 @@ Place the AWS keypair '.pem' file into the folder as well, and amend the 'aws_cl
 Amend the 'image-id' and 'security-group' IDs as needed.
 Make the shell script file executable.
 Run: 
-```./aws_cli_microk8s.sh
+```
+./aws_cli_microk8s.sh
 ```
