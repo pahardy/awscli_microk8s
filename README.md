@@ -1,3 +1,5 @@
+### Main branch
+
 # Title
 "AWS CLI Microk8s"
 
@@ -17,3 +19,19 @@ Run:
 ```
 ./aws_cli_microk8s.sh
 ```
+
+### Terraform branch
+
+## Description
+Creates an AWS EC2 instance with microk8s package installed, in the same way the AWS CLI commands would, using Terraform.
+
+## Installation
+Clone the repository.
+Run the terraform commands:
+```
+terraform init
+terraform validate
+terraform plan
+terraform apply
+```
+The terraform code has an output which will show its public IP address.
