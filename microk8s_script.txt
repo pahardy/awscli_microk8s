@@ -1,0 +1,12 @@
+#!/bin/bash
+sudo -i
+snap install --channel=1.23/stable --classic microk8s
+snap install --classic helm
+usermod -a -G microk8s "${USER}" && su - "${USER}"
+microk8s.enable dns dashboard storage ingress
+microk8s.kubectl config view --raw > "${HOME}/.kube/config"
+chown "${USER}" "${HOME}/.kube"
+chown "${USER}" "${HOME}/.kube/config"
+chmod 750 "${HOME}/.kube"
+chmod 640 "${HOME}/.kube/config"
+kubectl config view --raw >~/.kube/config

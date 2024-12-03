@@ -1,0 +1,1 @@
+aws ec2 run-instances --image-id ami-0eb9fdcf0d07bd5ef --count 1 --instance-type t2.2xlarge --key-name MyKeyPair --security-group-ids sg-07d01dbe763d83778 --block-device-mappings file://device_mapping.json --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=AWSCLIMicrok8s}]' --user-data file://microk8s_script.txt
