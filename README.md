@@ -15,3 +15,4 @@ Amend the 'image-id' and 'security-group' IDs as needed.
 Make the shell script file executable.
 Run: 
 ```./aws_cli_microk8s.sh
+```
