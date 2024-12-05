@@ -1,6 +1,6 @@
 ### Main branch
 
-# Title
+## Title
 "AWS CLI Microk8s"
 
 ## Description
@@ -8,7 +8,7 @@ This project is designed to create an EC2 instance in AWS, via the AWS CLI, and 
 - A shell script which contains the AWS CLI code itself,
 - A 'device_mapping.json' file which describes the EBS volume to be used by the instance, setting it to 50GB,
 - A 'microk8s_script.txt' file, which runs the commands in the EC2 instance to install microk8s.
-There should be a default VPC, as well as AWS Security Group with desired access settings (HTTP, HTTPS, SSH) in place.
+There should be a default VPC, as well as AWS Security Group with desired access settings (HTTP, HTTPS, SSH) already in place.
 
 ## Installation
 Clone the repository and place all files into a folder. 
@@ -19,6 +19,19 @@ Run:
 ```
 ./aws_cli_microk8s.sh
 ```
+
+When the command is run, it'll produce JSON output, among this will be the `instance-id`. Query this to get the public IP address:
+
+```
+aws ec2 describe-instances --instance-id <instance-id-goes-here>
+```
+
+##Termination
+
+```
+aws ec2 terminate-instances --instance-id <instance-id-goes-here>
+```
+
 
 ### Terraform branch
 
@@ -35,3 +48,9 @@ terraform plan
 terraform apply
 ```
 The terraform code has an output which will show its public IP address.
+
+##Termination
+
+```
+terraform destroy
+```
