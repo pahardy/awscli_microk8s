@@ -26,7 +26,7 @@ When the command is run, it'll produce JSON output, among this will be the `inst
 aws ec2 describe-instances --instance-id <instance-id-goes-here>
 ```
 
-##Termination
+## Termination
 
 ```
 aws ec2 terminate-instances --instance-id <instance-id-goes-here>
@@ -49,7 +49,7 @@ terraform apply
 ```
 The terraform code has an output which will show its public IP address.
 
-##Termination
+## Termination
 
 ```
 terraform destroy
